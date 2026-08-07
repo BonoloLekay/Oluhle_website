@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, redirect, flash, url_for
+from flask import Blueprint, render_template, request, redirect, flash, url_for, current_app
 from datetime import datetime
 from flask_mail import Message
 from config import mail
@@ -40,7 +40,7 @@ def booking_request():
         special_requests = request.form.get("special_requests", "")
 
         services = request.form.getlist("services")
-        
+
         services_text = ", ".join(services) if services else "None"
 
         resort_email = Message(
@@ -111,6 +111,12 @@ def booking_request():
 
     Oluhle Resort🌿
     """
+
+        print("MAIL_SERVER:", current_app.config["MAIL_SERVER"])
+        print("MAIL_PORT:", current_app.config["MAIL_PORT"])
+        print("MAIL_USE_TLS:", current_app.config["MAIL_USE_TLS"])
+        print("MAIL_USERNAME:", current_app.config["MAIL_USERNAME"])
+        print("MAIL_DEFAULT_SENDER:", current_app.config["MAIL_DEFAULT_SENDER"])    
 
         mail.send(customer_email)
 
