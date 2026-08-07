@@ -80,7 +80,11 @@ def booking_request():
         {special_requests}
         """
 
-        mail.send(resort_email)
+        try:
+            mail.send(resort_email)
+            print("Resort email sent successfully.")
+        except Exception as e:
+            print("Error sending resort email:", e)
 
         customer_email = Message(
         subject="Booking Request Received",
@@ -118,7 +122,11 @@ def booking_request():
         print("MAIL_USERNAME:", current_app.config["MAIL_USERNAME"])
         print("MAIL_DEFAULT_SENDER:", current_app.config["MAIL_DEFAULT_SENDER"])    
 
-        mail.send(customer_email)
+        try:
+            mail.send(customer_email)
+            print("Customer email sent successfully.")
+        except Exception as e:
+            print("Error sending customer email:", e)
 
         return render_template("booking_success.html")
 
