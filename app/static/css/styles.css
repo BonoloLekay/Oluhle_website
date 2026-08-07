@@ -53,37 +53,145 @@ section {
 /* =========================
    NAVBAR
 ========================= */
-
 .navbar {
-  background: rgba(62, 39, 35, 0.95);
-
-  backdrop-filter: blur(8px);
-
-  transition: 0.4s;
-
-  padding: 18px 0;
+    background: rgba(62, 39, 35, 0.95);
+    backdrop-filter: blur(8px);
+    transition: 0.4s;
+    padding: 12px 0;
 }
 
 .navbar-brand {
-  font-size: 1.7rem;
-
-  font-weight: 700;
-
-  color: white !important;
+    display: flex;
+    align-items: center;
+    color: white !important;
+    font-size: 1.7rem;
+    font-weight: 700;
+    white-space: nowrap;
 }
 
-.nav-link {
-  color: white !important;
-
-  margin-left: 15px;
-
-  font-weight: 500;
-
-  transition: 0.3s;
+.resort-logo {
+    height: 55px;
+    width: auto;
+    max-width: 180px;
+    object-fit: contain;
 }
 
-.nav-link:hover {
-  color: var(--gold) !important;
+.navbar-brand-text {
+    margin-left: 10px;
+}
+
+
+/* Navigation links */
+
+.navbar .nav-link {
+    color: white !important;
+    margin-left: 15px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: var(--gold) !important;
+}
+
+
+/* Mobile hamburger */
+
+.navbar-toggler {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 7px 10px;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+
+/* =========================
+MOBILE NAVBAR
+========================= */
+
+@media (max-width: 991.98px) {
+
+    .navbar {
+        padding: 10px 0;
+    }
+
+    .navbar-collapse {
+        margin-top: 12px;
+        padding: 15px;
+
+        background: rgba(62, 39, 35, 0.98);
+
+        border-radius: 12px;
+
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .navbar-nav {
+        text-align: center;
+        align-items: stretch !important;
+        margin-top: 0 !important;
+    }
+
+    .navbar .nav-item {
+        width: 100%;
+    }
+
+    .navbar .nav-link {
+        margin-left: 0;
+        padding: 12px 10px;
+
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .navbar .nav-link:hover {
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 8px;
+    }
+
+    /* Book Now */
+
+    .navbar .btn-gold {
+        display: block;
+        width: 100%;
+
+        margin-top: 12px;
+
+        text-align: center;
+    }
+
+}
+
+
+/* =========================
+SMALL PHONES
+========================= */
+
+@media (max-width: 576px) {
+
+    .navbar {
+        padding: 8px 0;
+    }
+
+    .resort-logo {
+        height: 45px;
+        max-width: 150px;
+    }
+
+    .navbar-brand {
+        font-size: 1.15rem;
+    }
+
+    .navbar-brand-text {
+        margin-left: 6px;
+    }
+
+    .navbar-toggler {
+        padding: 6px 9px;
+    }
+
 }
 
 /* =========================
@@ -304,21 +412,16 @@ footer hr {
 }
 
 @media (max-width: 768px) {
-  .navbar-nav {
-    text-align: center;
 
-    margin-top: 20px;
-  }
+    .hero h1 {
+        font-size: 2.2rem;
+    }
 
-  .hero h1 {
-    font-size: 2.2rem;
-  }
+    .hero-buttons a {
+        display: block;
+        margin-bottom: 15px;
+    }
 
-  .hero-buttons a {
-    display: block;
-
-    margin-bottom: 15px;
-  }
 }
 
 /* =========================
@@ -831,25 +934,6 @@ textarea {
   .progress {
     height: 8px !important;
   }
-}
-
-.resort-logo {
-    height: 55px;
-    width: auto;
-    object-fit: contain;
-}
-
-.resort-logo {
-    width: auto;
-    max-width: 180px;
-    object-fit: contain;
-}
-
-@media (max-width: 768px) {
-    .resort-logo {
-        height: 45px;
-        max-width: 150px;
-    }
 }
 
 /* ================= RESORT GALLERY ================= */
