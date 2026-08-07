@@ -1,0 +1,38 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}Booking Submitted{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="card shadow-lg text-center p-5">
+
+        <div class="mb-4">
+            <h1 class="text-success">✓ Booking Request Submitted</h1>
+        </div>
+
+        <p class="lead">
+            Thank you for choosing <strong>Oluhle Resort</strong>.
+        </p>
+
+        <p>
+            Your booking request has been received successfully.
+            Our reception team will review it and contact you via your preferred communication method.
+        </p>
+
+        <div class="mt-4">
+            <a href="{{ url_for('home.home') }}" class="btn btn-success">
+                Return to Home
+            </a>
+
+            <a href="{{ url_for('booking.booking_request') }}" class="btn btn-outline-secondary">
+                Submit Another Request
+            </a>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

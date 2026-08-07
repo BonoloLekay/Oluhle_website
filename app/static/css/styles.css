@@ -1,0 +1,848 @@
+/* =========================
+   GOOGLE FONT
+========================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* =========================
+   ROOT COLORS
+========================= */
+
+:root{
+
+    --primary:#5C4033;
+    --secondary:#8B6B4A;
+    --dark:#3E2723;
+    --gold:#C9A227;
+    --light:#F5EFE6;
+    --white:#FAF9F6;
+    --text:#2E2E2E;
+
+}
+
+/* =========================
+   GENERAL
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:var(--light);
+
+    color:var(--text);
+
+    line-height:1.7;
+
+}
+
+a{
+    text-decoration:none;
+}
+
+section{
+    padding:90px 0;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar{
+
+    background:rgba(62,39,35,.95);
+
+    backdrop-filter:blur(8px);
+
+    transition:.4s;
+
+    padding:18px 0;
+
+}
+
+.navbar-brand{
+
+    font-size:1.7rem;
+
+    font-weight:700;
+
+    color:white !important;
+
+}
+
+.nav-link{
+
+    color:white !important;
+
+    margin-left:15px;
+
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+.nav-link:hover{
+
+    color:var(--gold) !important;
+
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn-gold{
+
+    background:var(--gold);
+
+    color:white;
+
+    border:none;
+
+    border-radius:30px;
+
+    padding:12px 28px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.btn-gold:hover{
+
+    background:#B18D22;
+
+    color:white;
+
+    transform:translateY(-2px);
+
+}
+
+.btn-outline-light{
+
+    border-radius:30px;
+
+    padding:12px 28px;
+
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    background:
+    linear-gradient(
+        rgba(62,39,35,.82),
+        rgba(92,64,51,.82)
+    );
+
+    color:white;
+
+}
+
+.hero-tag{
+
+    display:inline-block;
+
+    background:rgba(255,255,255,.15);
+
+    padding:10px 20px;
+
+    border-radius:50px;
+
+    margin-bottom:25px;
+
+    font-weight:500;
+
+}
+
+.hero h1{
+
+    font-size:4rem;
+
+    font-weight:800;
+
+    margin-bottom:25px;
+
+}
+
+.hero p{
+
+    font-size:1.2rem;
+
+    margin-bottom:35px;
+
+    max-width:650px;
+
+}
+
+.hero-buttons a{
+
+    margin-right:15px;
+
+}
+
+.hero-card{
+
+    background:white;
+
+    color:var(--text);
+
+    border-radius:20px;
+
+    padding:35px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.2);
+
+}
+
+.hero-card h3{
+
+    color:var(--primary);
+
+    margin-bottom:20px;
+
+}
+
+.hero-card p{
+
+    margin-bottom:12px;
+
+}
+
+/* =========================
+   SECTION TITLES
+========================= */
+
+.section-title{
+
+    color:var(--primary);
+
+    font-size:2.5rem;
+
+    font-weight:700;
+
+}
+
+.section-subtitle{
+
+    color:#666;
+
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.card{
+
+    border:none;
+
+    border-radius:18px;
+
+    transition:.3s;
+
+    overflow:hidden;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.card-body{
+
+    padding:30px;
+
+}
+
+.card-title{
+
+    color:var(--primary);
+
+    font-weight:700;
+
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    background:var(--dark);
+
+    color:white;
+
+    padding:70px 0 25px;
+
+}
+
+footer h4,
+footer h5{
+
+    color:var(--gold);
+
+}
+
+footer a{
+
+    color:#ddd;
+
+}
+
+footer a:hover{
+
+    color:var(--gold);
+
+}
+
+footer hr{
+
+    border-color:rgba(255,255,255,.2);
+
+}
+
+/* =========================
+   FORMS
+========================= */
+
+.form-control{
+
+    border-radius:10px;
+
+    padding:14px;
+
+}
+
+.form-control:focus{
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 10px rgba(92,64,51,.25);
+
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:992px){
+
+.hero{
+
+text-align:center;
+
+padding-top:120px;
+
+}
+
+.hero h1{
+
+font-size:2.8rem;
+
+}
+
+.hero-card{
+
+margin-top:50px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.navbar-nav{
+
+text-align:center;
+
+margin-top:20px;
+
+}
+
+.hero h1{
+
+font-size:2.2rem;
+
+}
+
+.hero-buttons a{
+
+display:block;
+
+margin-bottom:15px;
+
+}
+
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about{
+    background:white;
+}
+
+.about-image{
+
+    height:420px;
+
+    border-radius:20px;
+
+    background:linear-gradient(135deg,#5C4033,#8B6B4A);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:white;
+
+    font-size:120px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+
+}
+
+/* =========================
+   SERVICES
+========================= */
+
+.services{
+    background:#F5EFE6;
+}
+
+.service-icon{
+
+    font-size:70px;
+
+    color:#C9A227;
+
+}
+
+.services .card{
+
+    padding:20px;
+
+    transition:.4s;
+
+}
+
+.services .card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:0 20px 35px rgba(0,0,0,.15);
+
+}
+
+/* =========================
+   STATISTICS
+========================= */
+
+.statistics{
+
+    background:#5C4033;
+
+    color:white;
+
+    padding:80px 0;
+
+}
+
+.statistics h2{
+
+    color:#C9A227;
+
+    font-size:3rem;
+
+    font-weight:700;
+
+}
+
+.statistics p{
+
+    font-size:1.1rem;
+
+    margin-top:10px;
+
+}
+
+/* =========================
+WHY CHOOSE US
+========================= */
+
+.why-us{
+
+    background:white;
+
+}
+
+.feature-box{
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:15px;
+
+    text-align:center;
+
+    transition:.4s;
+
+    box-shadow:0 10px 20px rgba(0,0,0,.08);
+
+}
+
+.feature-box:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.feature-box i{
+
+    font-size:60px;
+
+    color:#C9A227;
+
+    margin-bottom:20px;
+
+}
+
+/* =========================
+GALLERY
+========================= */
+
+.gallery{
+
+    background:#F5EFE6;
+
+}
+
+.gallery-item{
+
+    height:280px;
+
+    background:white;
+
+    border-radius:15px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.gallery-item:hover{
+
+    transform:scale(1.03);
+
+}
+
+.gallery-item i{
+
+    font-size:90px;
+
+    color:#5C4033;
+
+}
+
+/* =========================
+TESTIMONIALS
+========================= */
+
+.testimonials{
+
+    background:#5C4033;
+
+    padding:90px 0;
+
+}
+
+.testimonial-card{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:15px;
+
+    height:100%;
+
+}
+
+/* =========================
+CTA
+========================= */
+
+.cta{
+
+    background:linear-gradient(135deg,#5C4033,#8B6B4A);
+
+    color:white;
+
+    text-align:center;
+
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+section{
+    scroll-margin-top:90px;
+}
+
+/* ==========================
+BOOKING PAGE
+========================== */
+
+.booking-page{
+
+    background:#F5EFE6;
+
+    min-height:100vh;
+
+}
+
+.booking-card{
+
+    background:white;
+
+    padding:50px;
+
+    border-radius:20px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+}
+
+.form-step{
+
+    display:none;
+
+}
+
+.form-step.active{
+
+    display:block;
+
+}
+
+.progress{
+
+    border-radius:20px;
+
+}
+
+.progress-bar{
+
+    background:#5C4033;
+
+    transition:.4s;
+
+}
+
+.service-details{
+
+    background:#faf8f3;
+
+    padding:25px;
+
+    border-radius:12px;
+
+    margin-top:20px;
+
+    border-left:5px solid #C9A227;
+
+}
+
+.review-box{
+
+    background:white;
+
+    border-radius:15px;
+
+    padding:30px;
+
+    box-shadow:0 10px 20px rgba(0,0,0,.08);
+
+}
+
+/* ===========================
+   ABOUT SECTION
+=========================== */
+
+#about {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+#about h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1f3d2b;
+    margin-bottom: 20px;
+}
+
+#about p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+#about img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    transition: transform 0.4s ease;
+}
+
+#about img:hover {
+    transform: scale(1.03);
+}
+
+.btn-gold {
+    background-color: #c8a95c;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-gold:hover {
+    background-color: #a8893c;
+    color: white;
+}
+
+
+/*=============================
+ADMIN DASHBOARD
+==============================*/
+
+.dashboard-header{
+    background:#ffffff;
+    padding:30px;
+    border-radius:15px;
+    margin-bottom:30px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.dashboard-header h2{
+    font-weight:700;
+    color:#3d2b25;
+}
+
+.dashboard-header p{
+    color:#777;
+    margin-bottom:0;
+}
+
+.stat-card{
+    border:none;
+    border-radius:15px;
+    padding:25px;
+    text-align:center;
+    background:#fff;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.stat-card:hover{
+    transform:translateY(-5px);
+}
+
+.stat-card i{
+    font-size:35px;
+    color:#c9a34d;
+}
+
+.stat-card h3{
+    margin-top:15px;
+    font-size:32px;
+    font-weight:bold;
+}
+
+.stat-card p{
+    color:#666;
+    margin-bottom:0;
+}
+
+.quick-card{
+    border:none;
+    border-radius:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.quick-card:hover{
+    transform:translateY(-8px);
+}
+
+.quick-card .card-body{
+    padding:35px;
+    text-align:center;
+}
+
+.quick-card i{
+    font-size:50px;
+    color:#c9a34d;
+    margin-bottom:20px;
+}
+
+.quick-card h4{
+    font-weight:600;
+}
+
+.quick-card .btn{
+    margin-top:20px;
+    border-radius:30px;
+}
+
+.table-card{
+    background:#fff;
+    border-radius:18px;
+    padding:25px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+

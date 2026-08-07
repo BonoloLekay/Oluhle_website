@@ -1,0 +1,412 @@
+{% extends "layouts/base.html" %} {% block title %} Booking Request | Oluhle
+Resort {% endblock %} {% block content %}
+
+<section class="booking-page py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="booking-card">
+          <div class="text-center mb-5">
+            <h1 class="section-title">Booking Request</h1>
+
+            <p>
+              Complete the booking request form below. Our reception team will
+              review your request and contact you via your preferred
+              communication method.
+            </p>
+          </div>
+
+          <!-- Progress Bar -->
+
+          <div class="progress mb-5" style="height: 10px">
+            <div class="progress-bar" id="progressBar" style="width: 20%"></div>
+          </div>
+
+          <form
+            id="bookingForm"
+            method="POST"
+            action="{{ url_for('booking.booking_request') }}"
+          >
+            <!-- STEP 1 -->
+
+            <div class="form-step active">
+              <h3 class="mb-4">Personal Information</h3>
+
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label class="form-label"> First Name </label>
+
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="first_name"
+                    name="first_name"
+                    required
+                  />
+                </div>
+
+                <div class="col-md-6 mb-3">
+                  <label class="form-label"> Last Name </label>
+
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="last_name"
+                    name="last_name"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label"> Email Address </label>
+
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  name="email"
+                  required
+                />
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label"> Phone Number </label>
+
+                <input
+                  type="text"
+                  class="form-control"
+                  id="phone"
+                  name="phone"
+                  required
+                />
+              </div>
+
+              <div class="mb-4">
+                <label class="form-label"> Preferred Communication </label>
+
+                <select
+                  class="form-select"
+                  id="preferred_communication"
+                  name="preferred_communication"
+                  required
+                >
+                  <option value="">Select</option>
+
+                  <option value="WhatsApp">WhatsApp</option>
+
+                  <option value="Email">Email</option>
+                </select>
+              </div>
+
+              <div class="text-end">
+                <button type="button" class="btn btn-gold next-btn">
+                  Next
+                </button>
+              </div>
+            </div>
+
+            <!-- STEP 2 -->
+
+            <div class="form-step">
+              <h3 class="mb-4">Booking Details</h3>
+
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label> Check-in Date </label>
+
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="check_in"
+                    name="check_in"
+                    required
+                  />
+                </div>
+
+                <div class="col-md-6 mb-3">
+                  <label> Check-out Date </label>
+
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="check_out"
+                    name="check_out"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <label> Number of Guests </label>
+
+                <input
+                  type="number"
+                  class="form-control"
+                  id="guests"
+                  name="guests"
+                  min="1"
+                  required
+                />
+              </div>
+
+              <div class="d-flex justify-content-between">
+                <button type="button" class="btn btn-secondary prev-btn">
+                  Previous
+                </button>
+
+                <button type="button" class="btn btn-gold next-btn">
+                  Next
+                </button>
+              </div>
+            </div>
+
+            <!-- STEP 3 -->
+
+            <div class="form-step">
+              <h3 class="mb-4">Select Services</h3>
+
+              <div class="form-check mb-3">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="chalet"
+                  name="services"
+                  value="Standard Chalet"
+                />
+
+                <label class="form-check-label" for="chalet">
+                  Standard Chalet
+                </label>
+              </div>
+
+              <div class="form-check mb-3">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="conference"
+                  name="services"
+                  value="Conference Hall"
+                />
+
+                <label class="form-check-label" for="conference">
+                  Conference Hall
+                </label>
+              </div>
+
+              <div class="form-check mb-4">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="spa"
+                  name="services"
+                  value="Spa Treatment"
+                />
+
+                <label class="form-check-label" for="spa">
+                  Spa Treatment
+                </label>
+              </div>
+
+              <div class="d-flex justify-content-between">
+                <button type="button" class="btn btn-secondary prev-btn">
+                  Previous
+                </button>
+
+                <button type="button" class="btn btn-gold next-btn">
+                  Next
+                </button>
+              </div>
+            </div>
+
+            <!-- STEP 4 -->
+
+            <!-- ================= STEP 4 ================= -->
+
+            <div class="form-step">
+              <h3 class="mb-4">Service Details</h3>
+
+              <p class="text-muted">
+                Complete the details for the services you selected.
+              </p>
+
+              <!-- CHALET -->
+
+              <div id="chaletDetails" class="service-details d-none">
+                <h4 class="mt-4">Standard Chalet</h4>
+
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label"> Number of Chalets </label>
+
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="number_of_chalets"
+                      name="number_of_chalets"
+                      min="1"
+                      value="1"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- CONFERENCE -->
+
+              <div id="conferenceDetails" class="service-details d-none">
+                <h4 class="mt-4">Conference Hall</h4>
+
+                <div class="mb-3">
+                  <label class="form-label"> Event Name </label>
+
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="event_name"
+                    name="event_name"
+                  />
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label"> Event Date </label>
+
+                    <input
+                      type="date"
+                      class="form-control"
+                      id="event_date"
+                      name="event_date"
+                    />
+                  </div>
+
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label"> Expected Attendees </label>
+
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="expected_attendees"
+                      name="expected_attendees"
+                      min="1"
+                      max="60"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- SPA -->
+
+              <div id="spaDetails" class="service-details d-none">
+                <h4 class="mt-4">Spa Treatments</h4>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        name="spa_treatments"
+                        value="Full Body Massage"
+                      />
+
+                      <label class="form-check-label">
+                        Full Body Massage
+                      </label>
+                    </div>
+
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        name="spa_treatments"
+                        value="Facial Treatment"
+                      />
+
+                      <label class="form-check-label"> Facial Treatment </label>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        name="spa_treatments"
+                        value="Hot Stone Massage"
+                      />
+
+                      <label class="form-check-label">
+                        Hot Stone Massage
+                      </label>
+                    </div>
+
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        name="spa_treatments"
+                        value="Manicure & Pedicure"
+                      />
+
+                      <label class="form-check-label">
+                        Manicure & Pedicure
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-4">
+                <label class="form-label"> Special Requests </label>
+
+                <textarea
+                  rows="5"
+                  class="form-control"
+                  id="special_requests"
+                  name="special_requests"
+                  placeholder="Any additional information..."
+                ></textarea>
+              </div>
+
+              <div class="d-flex justify-content-between mt-5">
+                <button type="button" class="btn btn-secondary prev-btn">
+                  Previous
+                </button>
+
+                <button type="button" class="btn btn-gold next-btn">
+                  Next
+                </button>
+              </div>
+            </div>
+            <div class="form-step">
+              <h3 class="mb-4">Review Your Request</h3>
+
+              <p class="text-muted">
+                Please review your booking request before submitting it.
+              </p>
+
+              <div class="review-box">
+                <p>
+                  A summary of your booking will appear here before submission.
+                </p>
+              </div>
+
+              <div class="d-flex justify-content-between mt-5">
+                <button type="button" class="btn btn-secondary prev-btn">
+                  Previous
+                </button>
+
+                <button type="submit" class="btn btn-success">
+                  Submit Booking Request
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ================= STEP 5 ================= -->
+</section>
+
+{% endblock %}
