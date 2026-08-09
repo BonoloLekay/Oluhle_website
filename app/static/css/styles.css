@@ -54,144 +54,136 @@ section {
    NAVBAR
 ========================= */
 .navbar {
-    background: rgba(62, 39, 35, 0.95);
-    backdrop-filter: blur(8px);
-    transition: 0.4s;
-    padding: 12px 0;
+  background: rgba(62, 39, 35, 0.95);
+  backdrop-filter: blur(8px);
+  transition: 0.4s;
+  padding: 12px 0;
 }
 
 .navbar-brand {
-    display: flex;
-    align-items: center;
-    color: white !important;
-    font-size: 1.7rem;
-    font-weight: 700;
-    white-space: nowrap;
+  display: flex;
+  align-items: center;
+  color: white !important;
+  font-size: 1.7rem;
+  font-weight: 700;
+  white-space: nowrap;
 }
 
 .resort-logo {
-    height: 55px;
-    width: auto;
-    max-width: 180px;
-    object-fit: contain;
+  height: 55px;
+  width: auto;
+  max-width: 180px;
+  object-fit: contain;
 }
 
 .navbar-brand-text {
-    margin-left: 10px;
+  margin-left: 10px;
 }
-
 
 /* Navigation links */
 
 .navbar .nav-link {
-    color: white !important;
-    margin-left: 15px;
-    font-weight: 500;
-    transition: 0.3s;
+  color: white !important;
+  margin-left: 15px;
+  font-weight: 500;
+  transition: 0.3s;
 }
 
 .navbar .nav-link:hover,
 .navbar .nav-link.active {
-    color: var(--gold) !important;
+  color: var(--gold) !important;
 }
-
 
 /* Mobile hamburger */
 
 .navbar-toggler {
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    padding: 7px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 7px 10px;
 }
 
 .navbar-toggler:focus {
-    box-shadow: none;
+  box-shadow: none;
 }
-
 
 /* =========================
 MOBILE NAVBAR
 ========================= */
 
 @media (max-width: 991.98px) {
+  .navbar {
+    padding: 10px 0;
+  }
 
-    .navbar {
-        padding: 10px 0;
-    }
+  .navbar-collapse {
+    margin-top: 12px;
+    padding: 15px;
 
-    .navbar-collapse {
-        margin-top: 12px;
-        padding: 15px;
+    background: rgba(62, 39, 35, 0.98);
 
-        background: rgba(62, 39, 35, 0.98);
+    border-radius: 12px;
 
-        border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
 
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    }
+  .navbar-nav {
+    text-align: center;
+    align-items: stretch !important;
+    margin-top: 0 !important;
+  }
 
-    .navbar-nav {
-        text-align: center;
-        align-items: stretch !important;
-        margin-top: 0 !important;
-    }
+  .navbar .nav-item {
+    width: 100%;
+  }
 
-    .navbar .nav-item {
-        width: 100%;
-    }
+  .navbar .nav-link {
+    margin-left: 0;
+    padding: 12px 10px;
 
-    .navbar .nav-link {
-        margin-left: 0;
-        padding: 12px 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
 
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
+  .navbar .nav-link:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+  }
 
-    .navbar .nav-link:hover {
-        background: rgba(255, 255, 255, 0.08);
-        border-radius: 8px;
-    }
+  /* Book Now */
 
-    /* Book Now */
+  .navbar .btn-gold {
+    display: block;
+    width: 100%;
 
-    .navbar .btn-gold {
-        display: block;
-        width: 100%;
+    margin-top: 12px;
 
-        margin-top: 12px;
-
-        text-align: center;
-    }
-
+    text-align: center;
+  }
 }
-
 
 /* =========================
 SMALL PHONES
 ========================= */
 
 @media (max-width: 576px) {
+  .navbar {
+    padding: 8px 0;
+  }
 
-    .navbar {
-        padding: 8px 0;
-    }
+  .resort-logo {
+    height: 45px;
+    max-width: 150px;
+  }
 
-    .resort-logo {
-        height: 45px;
-        max-width: 150px;
-    }
+  .navbar-brand {
+    font-size: 1.15rem;
+  }
 
-    .navbar-brand {
-        font-size: 1.15rem;
-    }
+  .navbar-brand-text {
+    margin-left: 6px;
+  }
 
-    .navbar-brand-text {
-        margin-left: 6px;
-    }
-
-    .navbar-toggler {
-        padding: 6px 9px;
-    }
-
+  .navbar-toggler {
+    padding: 6px 9px;
+  }
 }
 
 /* =========================
@@ -412,16 +404,14 @@ footer hr {
 }
 
 @media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
 
-    .hero h1 {
-        font-size: 2.2rem;
-    }
-
-    .hero-buttons a {
-        display: block;
-        margin-bottom: 15px;
-    }
-
+  .hero-buttons a {
+    display: block;
+    margin-bottom: 15px;
+  }
 }
 
 /* =========================
@@ -939,121 +929,198 @@ textarea {
 /* ================= RESORT GALLERY ================= */
 
 .gallery-category-section {
-    margin-bottom: 60px;
+  margin-bottom: 60px;
 }
-
 
 /* Category heading */
 
 .gallery-category-heading {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .gallery-category-heading h3 {
-    color: #40323a;
-    font-size: 28px;
-    font-weight: 600;
-    margin-bottom: 5px;
+  color: #40323a;
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 5px;
 }
 
 .gallery-category-heading p {
-    color: #777;
-    margin-bottom: 0;
+  color: #777;
+  margin-bottom: 0;
 }
-
 
 /* ================= HORIZONTAL SCROLL ================= */
 
 .horizontal-gallery {
-    display: flex;
-    gap: 20px;
+  display: flex;
+  gap: 20px;
 
-    overflow-x: auto;
-    overflow-y: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
 
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 
-    padding: 10px 5px 20px;
+  padding: 10px 5px 20px;
 
-    cursor: grab;
+  cursor: grab;
 
-    scrollbar-width: thin;
+  scrollbar-width: thin;
 }
 
 .horizontal-gallery:active {
-    cursor: grabbing;
+  cursor: grabbing;
 }
-
 
 /* Hide default scrollbar on WebKit */
 
 .horizontal-gallery::-webkit-scrollbar {
-    height: 8px;
+  height: 8px;
 }
 
 .horizontal-gallery::-webkit-scrollbar-track {
-    background: #eee;
-    border-radius: 10px;
+  background: #eee;
+  border-radius: 10px;
 }
 
 .horizontal-gallery::-webkit-scrollbar-thumb {
-    background: #40323a;
-    border-radius: 10px;
+  background: #40323a;
+  border-radius: 10px;
 }
-
 
 /* ================= GALLERY CARD ================= */
 
 .gallery-card {
-    flex: 0 0 320px;
+  flex: 0 0 320px;
 
-    height: 240px;
+  height: 240px;
 
-    border-radius: 18px;
+  border-radius: 18px;
 
-    overflow: hidden;
+  overflow: hidden;
 
-    background: #ffffff;
+  background: #ffffff;
 
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 
-    transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .gallery-card:hover {
-    transform: translateY(-5px);
+  transform: translateY(-5px);
 }
-
 
 /* Images */
 
 .gallery-card img {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 
-    object-fit: cover;
+  object-fit: cover;
 
-    display: block;
+  display: block;
 
-    transition: transform 0.5s ease;
+  transition: transform 0.5s ease;
 }
 
 .gallery-card:hover img {
-    transform: scale(1.06);
+  transform: scale(1.06);
 }
-
 
 /* ================= MOBILE ================= */
 
 @media (max-width: 576px) {
+  .gallery-card {
+    flex: 0 0 280px;
+    height: 220px;
+  }
 
-    .gallery-card {
-        flex: 0 0 280px;
-        height: 220px;
-    }
+  .gallery-category-heading h3 {
+    font-size: 24px;
+  }
+}
 
-    .gallery-category-heading h3 {
-        font-size: 24px;
-    }
+/* WhatsApp Floating Button */
 
+.whatsapp-button {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 12px 18px;
+
+  background-color: #180e07;
+  color: #ffffff;
+
+  border-radius: 50px;
+
+  text-decoration: none;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+
+  z-index: 9999;
+
+  transition: all 0.3s ease;
+}
+
+.whatsapp-button:hover {
+  transform: translateY(-3px);
+
+  color: #ffffff;
+
+  box-shadow: 0 7px 20px rgba(0, 0, 0, 0.25);
+}
+
+.whatsapp-icon {
+  font-size: 22px;
+}
+
+.whatsapp-text {
+  white-space: nowrap;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  .whatsapp-float {
+    width: 52px;
+    height: 52px;
+
+    right: 16px;
+    bottom: 16px;
+
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .whatsapp-float {
+    width: 48px;
+    height: 48px;
+
+    right: 14px;
+    bottom: 14px;
+
+    font-size: 23px;
+  }
+}
+
+@media (max-width: 360px) {
+  .whatsapp-float {
+    width: 44px;
+    height: 44px;
+
+    right: 12px;
+    bottom: 12px;
+
+    font-size: 21px;
+  }
 }

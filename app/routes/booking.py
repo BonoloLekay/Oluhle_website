@@ -7,6 +7,8 @@ from app.services.pricing import (
     CONFERENCE_PRICE,
     SPA_PRICES
 )
+import os
+
 
 booking_bp = Blueprint("booking", __name__)
 from datetime import datetime
@@ -86,35 +88,26 @@ def booking_request():
         except Exception as e:
             print("Error sending resort email:", e)
 
+        logo_url = url_for(
+        "static",
+        filename="images/logo.png",
+        _external=True
+        )
+        #Customee email
         customer_email = Message(
-        subject="Booking Request Received",
+        subject="Oluhle Resort - Booking Request Received",
         recipients=[email]
         )
 
-        customer_email.body = f"""
-    Dear {first_name},
-
-    Thank you for choosing Oluhle Resort.
-
-    We have successfully received your booking request.
-
-    Booking Summary
-
-    Check-in: {check_in}
-
-    Check-out: {check_out}
-
-    Guests: {guests}
-
-    Services:
-    {services_text}
-
-    Our reservations team will contact you shortly.
-
-    Kind regards,
-
-    Oluhle Resort🌿
-    """
+        customer_email.html = render_template(
+        "emails/booking_confirmation.html",
+        first_name=first_name,
+        check_in=check_in,
+        check_out=check_out,
+        guests=guests,
+        services_text=services_text,
+        logo_url=logo_url
+        )
 
         print("MAIL_SERVER:", current_app.config["MAIL_SERVER"])
         print("MAIL_PORT:", current_app.config["MAIL_PORT"])
