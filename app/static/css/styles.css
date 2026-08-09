@@ -1187,70 +1187,473 @@ textarea {
 }
 
 /* =========================
-   GOOGLE MAP
+   FLIP CARD
 ========================= */
 
-.location-map {
-  width: 100%;
-  max-width: 600px;
-  overflow: hidden;
-  border-radius: 15px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+.flip-card {
+    width: 300px;
+    height: 400px;
+    perspective: 1000px;
+    flex: 0 0 300px;
+    cursor: pointer;
 }
 
-.location-map iframe {
-  display: block;
-  width: 100%;
-  height: 400px;
-  border: 0;
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+/* Flip when clicked */
+.flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+
+/* =========================
+   FRONT & BACK
+========================= */
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+
+    border-radius: 15px;
+    overflow: hidden;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================
+   FRONT
+========================= */
+
+.flip-card-front {
+    background: #ffffff;
+}
+
+.flip-card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.flip-card-overlay {
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+
+    padding: 30px 20px 25px;
+
+    background: linear-gradient(
+        transparent,
+        rgba(0, 0, 0, 0.8)
+    );
+
+    color: white;
+}
+
+.flip-card-overlay span {
+    font-size: 30px;
+}
+
+.flip-card-overlay h3 {
+    margin: 5px 0;
+    font-size: 24px;
+}
+
+.flip-card-overlay p {
+    margin: 5px 0 10px;
+    font-size: 14px;
+}
+
+.flip-card-overlay small {
+    font-size: 12px;
+    opacity: 0.9;
+}
+
+
+/* =========================
+   BACK
+========================= */
+
+.flip-card-back {
+    background: #ffffff;
+
+    transform: rotateY(180deg);
+
+    padding: 20px;
+
+    text-align: center;
+}
+
+.flip-card-back h3 {
+    color: #2f5d50;
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   MINI GALLERY
+========================= */
+
+.chalet-mini-gallery {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 8px;
+
+    height: 280px;
+}
+
+.chalet-mini-gallery img {
+    width: 100%;
+    height: 130px;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+}
+
+.flip-card-back p {
+    color: #777;
+    font-size: 12px;
+    margin-top: 12px;
 }
 
 /* =========================
-   TABLET
+   CHALET PHOTO SCROLL
 ========================= */
 
-@media (max-width: 768px) {
-  .location-map {
-    width: 100%;
-    max-width: 100%;
-    border-radius: 12px;
-  }
+.chalet-photo-scroll {
+    display: flex;
+    gap: 12px;
 
-  .location-map iframe {
-    height: 300px;
-  }
+    width: 100%;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scroll-behavior: smooth;
+
+    scroll-snap-type: x mandatory;
+
+    -webkit-overflow-scrolling: touch;
+
+    padding-bottom: 10px;
 }
+
+/* Each photo */
+.chalet-photo {
+    flex: 0 0 220px;
+
+    height: 220px;
+
+    scroll-snap-align: center;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+.chalet-photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+/* Scrollbar */
+.chalet-photo-scroll::-webkit-scrollbar {
+    height: 5px;
+}
+
+.chalet-photo-scroll::-webkit-scrollbar-thumb {
+    background: #2f5d50;
+    border-radius: 10px;
+}
+
+/* Hint */
+.flip-hint {
+    display: block;
+
+    margin-top: 10px;
+
+    font-size: 12px;
+
+    color: #777;
+
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+
+    .chalet-photo-scroll {
+        gap: 10px;
+    }
+
+    .chalet-photo {
+        flex: 0 0 200px;
+        height: 210px;
+    }
+
+}
+
+
+/* =========================
+   EXPERIENCES
+========================= */
+
+.experiences-section {
+    padding: 80px 5%;
+    background: #f7f5f0;
+}
+
+.experiences-heading {
+    max-width: 700px;
+    margin: 0 auto 45px;
+}
+
+.experiences-heading h2 {
+    color: #2f5d50;
+    font-size: 38px;
+    margin: 10px 0 15px;
+}
+
+.experiences-heading p {
+    color: #777;
+}
+
+
+/* =========================
+   EXPERIENCE CARD
+========================= */
+
+.experience-card {
+    background: #ffffff;
+    border-radius: 18px;
+    overflow: hidden;
+
+    height: 100%;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.experience-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================
+   MAIN IMAGE
+========================= */
+
+.experience-image {
+    width: 100%;
+    height: 260px;
+    overflow: hidden;
+}
+
+.experience-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.experience-content {
+    padding: 25px;
+}
+
+.experience-icon {
+    font-size: 28px;
+}
+
+.experience-content h3 {
+    color: #2f5d50;
+    font-size: 24px;
+
+    margin: 8px 0 10px;
+}
+
+.experience-content p {
+    color: #777;
+
+    line-height: 1.7;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================
+   PHOTO SCROLL
+========================= */
+
+.experience-gallery {
+    display: flex;
+
+    gap: 10px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    padding: 5px 0 10px;
+
+    scroll-behavior: smooth;
+
+    -webkit-overflow-scrolling: touch;
+}
+
+.experience-gallery img {
+    flex: 0 0 140px;
+
+    width: 140px;
+    height: 100px;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+}
+
+
+/* Scrollbar */
+
+.experience-gallery::-webkit-scrollbar {
+    height: 5px;
+}
+
+.experience-gallery::-webkit-scrollbar-thumb {
+    background: #2f5d50;
+
+    border-radius: 10px;
+}
+
+
+/* Hint */
+
+.experience-scroll {
+    display: block;
+
+    text-align: center;
+
+    color: #888;
+
+    margin-top: 5px;
+}
+
 
 /* =========================
    MOBILE
 ========================= */
 
-@media (max-width: 480px) {
-  .location-map {
-    width: 100%;
-    border-radius: 10px;
-  }
+@media (max-width: 600px) {
 
-  .location-map iframe {
-    height: 220px;
-  }
+    .experiences-section {
+        padding: 60px 15px;
+    }
+
+    .experiences-heading h2 {
+        font-size: 30px;
+    }
+
+    .experience-image {
+        height: 220px;
+    }
+
+    .experience-content {
+        padding: 20px;
+    }
+
+    .experience-gallery img {
+        flex: 0 0 125px;
+
+        width: 125px;
+        height: 90px;
+    }
+
+}
+
+.experience-details {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin: 15px 0;
+}
+
+.experience-details strong {
+    color: #6f6f6f;
+    font-size: 14px;
 }
 
 /* =========================
-   SMALL PHONES
+   SOCIAL MEDIA
 ========================= */
 
-@media (max-width: 360px) {
-  .location-section {
-    padding: 35px 12px;
-  }
+.social-media {
+    margin-top: 20px;
+}
 
-  .location-map {
-    width: 100%;
-    border-radius: 8px;
-  }
+.social-media h6 {
+    margin-bottom: 12px;
+    color: #ffffff;
+}
 
-  .location-map iframe {
-    height: 180px;
-  }
+.social-media a {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+
+    margin-right: 8px;
+
+    border-radius: 50%;
+
+    background-color: #2f5d50;
+
+    color: #ffffff;
+
+    font-size: 18px;
+
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+}
+
+.social-media a:hover {
+    transform: translateY(-3px);
+
+    background-color: #c9a85c;
+
+    color: #ffffff;
 }

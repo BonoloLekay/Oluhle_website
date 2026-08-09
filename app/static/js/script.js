@@ -202,3 +202,38 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const flipCards = document.querySelectorAll(".flip-card");
+
+    flipCards.forEach(function (card) {
+
+        card.addEventListener("click", function () {
+
+            card.classList.toggle("flipped");
+
+        });
+
+    });
+
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const galleries = document.querySelectorAll(".experience-gallery");
+
+  galleries.forEach(function (gallery) {
+    gallery.addEventListener(
+      "wheel",
+      function (event) {
+        // Allow normal vertical scrolling
+        if (Math.abs(event.deltaY) > Math.abs(event.deltaX)) {
+          gallery.scrollLeft += event.deltaY;
+          event.preventDefault();
+        }
+      },
+      { passive: false },
+    );
+  });
+});
