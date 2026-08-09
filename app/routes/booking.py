@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request, redirect, flash, url_for, current_app
-from datetime import datetime
+from datetime import datetime, date
 from flask_mail import Message
 from config import mail
 from app.services.pricing import (
@@ -123,4 +123,6 @@ def booking_request():
 
         return render_template("booking_success.html")
 
-    return render_template("booking_request.html")
+    return render_template("booking_request.html",
+    today=date.today().isoformat()
+    )
