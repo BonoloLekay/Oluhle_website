@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, Response
 from config import Config, mail
 
 def create_app():
